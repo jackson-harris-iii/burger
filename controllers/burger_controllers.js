@@ -1,12 +1,15 @@
 const express = require('express')
-const burger = require('../models/burger.js')
 
 const router = express.Router()
+
+var burger = require('../models/burger.js')
+
+
 
 router.get('/', (req,res) => {
     burger.selectAll((data) => {
         let hbsObject = {
-            burger: data
+            burgers: data
         };
         console.log(hbsObject)
     })
@@ -16,7 +19,7 @@ router.post("/", (req, res) => {
     burger.insertOne([
         'burger_name', 'devoured'
     ], [
-            req.body.name, req.body.devoured
+            req.body.burger_name, req.body.devoured
         ], (result) => {
             res.json({ id: result.insertId });
         });
@@ -25,7 +28,7 @@ router.post("/", (req, res) => {
 router.put("/", (req, res) => {
     let eaten = "id = " + req.params.id;
 
-    console.log("eaten", condition);
+    console.log("eaten", eaten);
 
     burger.updateOne({
         devoured: req.body.devoured
