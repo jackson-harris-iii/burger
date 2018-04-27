@@ -28,8 +28,8 @@ const orm = {
             console.log('db updated')
             cb(result)
         })
-    }
+    },
 
 }
 
-module.exports = {orm}
+module.exports = orm;
