@@ -2,11 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 		<title>Burgers</title>
 		<script src="https://code.jquery.com/jquery.js"></script>
 	</head>
-	<body>
-		{{{ body }}}
+	<body class="brown">
+        <nav>
+            <div class="nav-wrapper orange z-depth-3">
+                <h1 class=" center black-text">EAT BURGERS!</h1>
+            </div>
+        </nav>
+        <div class="container">
+            <br>
+            <div class="center">
+                <img class="responsive-img" src="/assets/img/burger.png" />
+            </div>
+            <div class="container">
+                {{{ body }}}
+            </div>
+        </div>
 	</body>
 </html>
