@@ -19,7 +19,7 @@
                 <li>
                     <div class="row card-panel hoverable orange lighten-2">
                         <div class="col s6">
-                                <h5>{{burger_name}}</h5>
+                                <h5>{{this.id}}. {{burger_name}}</h5>
                         </div>        
                         <div class="col s6">
                             <button class="eat-burger btn-floating btn-large waves-effect waves-light red pulse" id="{{this.id}}">
@@ -33,14 +33,14 @@
     </div>
 
     <div class="col s6">
-        <h4 class="center">Burgers that have been eaten!</h4>
+        <h4 class="center">Burgers that have been Eaten!</h4>
         
         <ul>
             {{#each burgers}} {{#if devoured}}
             <li>
                 <div>
                     <div class="eaten card horizontal" data-id="{{this.id}}">
-                       <h5 class="grey-text"> {{burger_name}}</h5>
+                       <h5 class="grey-text">{{this.id}}. {{burger_name}}</h5>
                     </div>
             </li>
             <br>

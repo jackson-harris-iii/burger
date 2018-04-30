@@ -29,14 +29,12 @@ console.log('we ready')
         };
 
         var id = event.target.id
-        console.log(id)
 
         $.ajax('/' + id, {
             type: "PUT",
             data: eaten
         }).then( (result) => {
-            console.log(result)
-            console.log('Burger ' + id + ' was devoured')
+            //after db has changed, reload page to show updated burger status
             location.reload()
         }
         )
