@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS dlbc5v3bfxbntng4;
-CREATE DATABASE dlbc5v3bfxbntng4;
-USE dlbc5v3bfxbntng4;
+DROP DATABASE IF EXISTS burgers_db;
+CREATE DATABASE burgers_db;
+USE burgers_db;
 
 CREATE TABLE burgers
 (
