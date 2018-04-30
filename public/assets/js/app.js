@@ -24,11 +24,22 @@ console.log('we ready')
         
         event.preventDefault();
 
-        var id = this.id
-        $.ajax('/', {
-            type: 'DELETE',
-            data: id
-        })
+        var eaten = {
+            devoured: true
+        };
+
+        var id = event.target.id
+        console.log(id)
+
+        $.ajax('/' + id, {
+            type: "PUT",
+            data: eaten
+        }).then( (result) => {
+            console.log(result)
+            console.log('Burger ' + id + ' was devoured')
+            location.reload()
+        }
+        )
     });
 
 });

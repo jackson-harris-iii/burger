@@ -32,14 +32,16 @@ const orm = {
     },
     updateOne: (table, objColVals, condition, cb) => {
        
-        let queryString = "UPDATE" + table;
+        var queryString = "UPDATE " + table;
 
-        queryString += ' SET ';
+        queryString += " SET ";
         queryString += objToSql(objColVals);
-        queryString += ' WHERE ';
+        queryString += " WHERE ";
         queryString += condition;
 
-        connection.query(queryString, [table, objColVals, condition], (err, result) => {
+        console.log(queryString)
+
+        connection.query(queryString, (err, result) => {
             if (err) throw err;
             console.log('db updated')
             cb(result)
@@ -73,6 +75,7 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+  return arr.toString();
 }
 
 module.exports = orm;
