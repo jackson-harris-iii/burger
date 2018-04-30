@@ -17,6 +17,8 @@ router.get('/', (req,res) => {
 })
 
 router.post("/", (req, res) => {
+    console.log(req.body.burger_name);
+    console.log(req.body.devoured);
     burger.insertOne([
         'burger_name', 'devoured'
     ], [
@@ -26,8 +28,8 @@ router.post("/", (req, res) => {
         });
 });
 
-router.put("/", (req, res) => {
-    let eaten = "id = " + req.params.id;
+router.put("/:id", (req, res) => {
+    var eaten = "id = " + req.params.id;
 
     console.log("eaten", eaten);
 
