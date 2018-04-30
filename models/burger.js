@@ -1,3 +1,4 @@
+//This is the ORM which processes the route requests and implements the proper mysql function
 const orm = require("../config/orm.js");
 
 var burger = {
